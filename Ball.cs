@@ -9,7 +9,7 @@ namespace PhysicsBallWinFormsLibrary
 {
     public class Ball
     {
-        public Graphics graphics;
+        public static Graphics graphics;
         public static Form form;
         public static Pen pen;
         public static Pen formPen;
