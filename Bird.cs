@@ -21,6 +21,10 @@ namespace PhysicsBallWinFormsLibrary
             ChangeScore = action;
         }
 
+        public override void Clear()
+        {
+            graphics.Clear(form.BackColor);
+        }
         public override void Go()
         {
             if (IsTouched()) 
