@@ -9,7 +9,7 @@ namespace PhysicsBallWinFormsLibrary
 {
     public class Ball
     {
-        public static Graphics graphics;
+        public Graphics graphics;
         public static Form form;
         public static Pen pen;
         public static Pen formPen;
@@ -29,10 +29,10 @@ namespace PhysicsBallWinFormsLibrary
         public float radius;
         protected float size;
         
-        protected float Vx;
-        protected float Vy;
+        public float Vx;
+        public float Vy;
 
-        protected float g;
+        public float g;
 
         public Ball() : this(0, 0)
         { }
@@ -46,6 +46,8 @@ namespace PhysicsBallWinFormsLibrary
         { }
         public Ball(float x, float y, float size, float vx, float vy, float g, Color color) 
         {
+            graphics = form.CreateGraphics();
+
             (this.x, this.y) = (x, y);
 
             this.size = size;
@@ -71,10 +73,12 @@ namespace PhysicsBallWinFormsLibrary
         }
         public void Clear() 
         {
-            graphics.FillEllipse(formBrush, rect with {X = x, Y = y });
-            graphics.DrawEllipse(formPen, rect with{X = x, Y = y});
+            //graphics.FillEllipse(formBrush, rect with {X = x, Y = y });
+            //graphics.DrawEllipse(formPen, rect with{X = x, Y = y});
+
+            graphics.Clear(form.BackColor);
         }
-        public void Go() 
+        public virtual void Go() 
         {
             x += Vx;
             y += Vy;
