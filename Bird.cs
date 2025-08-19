@@ -17,6 +17,7 @@ namespace PhysicsBallWinFormsLibrary
 
         public Bird(float x, float y, float size, float vx, float vy, float g, Color color, Action action) : base(x, y, size, vx, vy, g, color) 
         {
+            graphics = form.CreateGraphics();
             ChangeScore = action;
         }
 

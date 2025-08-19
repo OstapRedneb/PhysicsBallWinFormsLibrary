@@ -19,6 +19,10 @@ namespace PhysicsBallWinFormsLibrary
             timer.Start();
         }
 
+        public override void Clear()
+        {
+            graphics.Clear(form.BackColor);
+        }
         public override void MoveNext(object sender, EventArgs e)
         {
             if (y > form.ClientSize.Height)

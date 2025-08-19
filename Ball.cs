@@ -46,8 +46,6 @@ namespace PhysicsBallWinFormsLibrary
         { }
         public Ball(float x, float y, float size, float vx, float vy, float g, Color color) 
         {
-            graphics = form.CreateGraphics();
-
             (this.x, this.y) = (x, y);
 
             this.size = size;
@@ -71,12 +69,12 @@ namespace PhysicsBallWinFormsLibrary
             graphics.FillEllipse(brush, rect with { X = x, Y = y });
             graphics.DrawEllipse(pen, rect with { X = x, Y = y });
         }
-        public void Clear() 
+        public virtual void Clear() 
         {
-            //graphics.FillEllipse(formBrush, rect with {X = x, Y = y });
-            //graphics.DrawEllipse(formPen, rect with{X = x, Y = y});
+            graphics.FillEllipse(formBrush, rect with { X = x, Y = y });
+            graphics.DrawEllipse(formPen, rect with { X = x, Y = y });
 
-            graphics.Clear(form.BackColor);
+            //graphics.Clear(form.BackColor);
         }
         public virtual void Go() 
         {
